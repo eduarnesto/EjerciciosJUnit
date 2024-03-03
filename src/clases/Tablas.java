@@ -2,7 +2,7 @@ package clases;
 
 public class Tablas {
 
-	static boolean esMagica(int tabla[][]) {
+	public static boolean esMagica(int tabla[][]) {
 		boolean magica = true;
 		int suma=0;
 		int nuevaSuma=0;
