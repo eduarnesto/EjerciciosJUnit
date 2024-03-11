@@ -22,8 +22,10 @@ class TablasTest {
 	
 	private static Stream<Arguments> magica() {
 		return Stream.of(
-			Arguments.of((Object) new int[][]{{1, 1}, {1, 1}}, true),
-			Arguments.of((Object) new int[][]{{1, 2}, {1, 1}}, false)
+			Arguments.of(new int[][]{{1, 1}, {1, 1}}, true),
+			Arguments.of(new int[][]{{1, 2}, {1, 1}}, false),
+			Arguments.of(new int[][]{{1}}, true),
+			Arguments.of(new int[][]{{}}, true)
 		);
 	}
 	
@@ -36,8 +38,10 @@ class TablasTest {
 
 	private static Stream<Arguments> gira() {
 		return Stream.of(
-			Arguments.of((Object) new int[][]{{1, 1}, {1, 1}}, (Object) new int[][]{{1, 1}, {1, 1}}),
-			Arguments.of((Object) new int[][]{{1, 2}, {1, 1}}, (Object) new int[][]{{1, 1}, {1, 2}})
+			Arguments.of(new int[][]{{1, 1}, {1, 1}}, new int[][]{{1, 1}, {1, 1}}),
+			Arguments.of(new int[][]{{1, 2}, {1, 1}}, new int[][]{{1, 1}, {1, 2}}),
+			Arguments.of(new int[][]{{1, 2, 3}, {1, 1}}, null),
+			Arguments.of(null, null)
 		);
 	}
 	

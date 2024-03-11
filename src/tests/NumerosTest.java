@@ -27,5 +27,22 @@ class NumerosTest {
 			Arguments.of(101, true)
 		);
 	}
+	
+	@ParameterizedTest
+	@MethodSource ("primo")
+	void testEsPrimo(int num, boolean expected) {
+		Numeros primo = new Numeros (num);
+		boolean resul = primo.esPrimo();
+		assertEquals(expected, resul);
+	}
+	
+	private static Stream<Arguments> primo() {
+		return Stream.of(
+			Arguments.of(1, false),
+			Arguments.of(8, false),
+			Arguments.of(2, true),
+			Arguments.of(17, true)
+		);
+	}
 
 }
